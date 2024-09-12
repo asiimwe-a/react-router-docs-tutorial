@@ -31,6 +31,10 @@ export default function Root() {
     navigation.location &&
     new URLSearchParams(navigation.location.search).has("q");
 
+  useEffect(() => {
+    document.getElementById("q").value = q;
+  }, [q]);
+
   return (
     <>
       <div id="sidebar">
@@ -97,8 +101,4 @@ export default function Root() {
       </div>
     </>
   );
-
-  useEffect(() => {
-    document.getElementById("q").value = q;
-  }, [q]);
 }
